@@ -51,19 +51,37 @@ export default function Home(props) {
                                 </h3>
                                 <div className="mt-3 sm:mt-0 sm:ml-4">
                                     <Link href="/integrations">
-                                        <a className="text-sm text-gray-400">View more</a>
+                                        <a className="text-sm text-gray-400">
+                                          View more
+                                        </a>
                                     </Link>
                                 </div>
                             </div>
                             <ul className="divide-y divide-gray-200">
-                                {props.credentials.map((integration) =>
+                                {props.credentials.map(integration =>
                                     <li className="pb-4 flex">
-                                        {integration.type == 'google_calendar' && <img className="h-10 w-10 mr-2" src="integrations/google-calendar.png" alt="Google Calendar" />}
-                                        {integration.type == 'office365_calendar' && <img className="h-10 w-10 mr-2" src="integrations/office-365.png" alt="Office 365 / Outlook.com Calendar" />}
+                                        {integration.type == 'google_calendar' && (
+                                          <img className="h-10 w-10 mr-2" src="integrations/google-calendar.png" alt="Google Calendar" />
+                                        )}
+                                        {integration.type == 'office365_calendar' && (
+                                          <img className="h-10 w-10 mr-2" 
+                                               src="integrations/office-365.png"
+                                               alt="Office 365 / Outlook.com Calendar" />
+                                        )}
                                         <div className="ml-3">
-                                            {integration.type == 'office365_calendar' && <p className="text-sm font-medium text-gray-900">Office 365 / Outlook.com Calendar</p>}
-                                            {integration.type == 'google_calendar' && <p className="text-sm font-medium text-gray-900">Google Calendar</p>}
-                                            <p className="text-sm text-gray-500">Calendar Integration</p>
+                                            {integration.type == 'office365_calendar' && (
+                                              <p className="text-sm font-medium text-gray-900">
+                                                Office 365 / Outlook.com Calendar
+                                              </p>
+                                            )}
+                                            {integration.type == 'google_calendar' && (
+                                              <p className="text-sm font-medium text-gray-900">
+                                                Google Calendar
+                                              </p>
+                                            )}
+                                            <p className="text-sm text-gray-500">
+                                              Calendar Integration
+                                            </p>
                                         </div>
                                     </li>
                                 )}
